@@ -22,7 +22,10 @@ namespace ITW_MobileAppService.Models
         {
         } 
 
-        public DbSet<TodoItem> TodoItems { get; set; }
+        //public DbSet<TodoItem> TodoItems { get; set; }
+        public DbSet<EmployeeItem> EmployeeItems { get; set; }
+        public DbSet<EventItem> EventItems { get; set; }
+        public DbSet<RecipientListItem> RecipientListItems { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
