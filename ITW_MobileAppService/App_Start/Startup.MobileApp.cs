@@ -26,10 +26,10 @@ namespace ITW_MobileAppService
                 .ApplyTo(config);
 
             // Use Entity Framework Code First to create database tables based on your DbContext
-            Database.SetInitializer(new ITW_MobileAppInitializer());
+            //Database.SetInitializer(new ITW_MobileAppInitializer());
 
             // To prevent Entity Framework from modifying your database schema, use a null database initializer
-            // Database.SetInitializer<ITW_MobileAppContext>(null);
+            Database.SetInitializer<ITW_MobileAppContext>(null);
 
             MobileAppSettingsDictionary settings = config.GetMobileAppSettingsProvider().GetMobileAppSettings();
 
@@ -49,23 +49,24 @@ namespace ITW_MobileAppService
         }
     }
 
-    public class ITW_MobileAppInitializer : CreateDatabaseIfNotExists<ITW_MobileAppContext>
+  /*  public class ITW_MobileAppInitializer : CreateDatabaseIfNotExists<ITW_MobileAppContext>
     {
         protected override void Seed(ITW_MobileAppContext context)
         {
-            List<TodoItem> todoItems = new List<TodoItem>
+            List<EmployeeItem> employeeItems = new List<EmployeeItem>
+            
             {
-                new TodoItem { Id = Guid.NewGuid().ToString(), Text = "First item", Complete = false },
-                new TodoItem { Id = Guid.NewGuid().ToString(), Text = "Second item", Complete = false },
+                new EmployeeItem { Id = Guid.NewGuid().ToString(), EmployeeID = 2, Name = "Employee One", Department = "Test", PrivledgeLevel ="User", Email = "test@gmail.com" },
+                new EmployeeItem { Id = Guid.NewGuid().ToString(), EmployeeID = 2, Name = "Employee One", Department = "Test", PrivledgeLevel ="User", Email = "test@gmail.com" },
             };
 
-            foreach (TodoItem todoItem in todoItems)
+            foreach (EmployeeItem employeeItem in employeeItems)
             {
-                context.Set<TodoItem>().Add(todoItem);
+                context.Set<EmployeeItem>().Add(employeeItem);
             }
 
             base.Seed(context);
         }
-    }
+    }*/
 }
 
