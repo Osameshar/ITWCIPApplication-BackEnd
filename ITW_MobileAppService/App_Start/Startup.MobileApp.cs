@@ -53,15 +53,16 @@ namespace ITW_MobileAppService
     {
         protected override void Seed(ITW_MobileAppContext context)
         {
-            List<TodoItem> todoItems = new List<TodoItem>
+            List<EmployeeItem> employeeItems = new List<EmployeeItem>
+            
             {
-                new TodoItem { Id = Guid.NewGuid().ToString(), Text = "First item", Complete = false },
-                new TodoItem { Id = Guid.NewGuid().ToString(), Text = "Second item", Complete = false },
+                new EmployeeItem { Id = Guid.NewGuid().ToString(), EmployeeID = 2, Name = "Employee One", Department = "Test", PrivledgeLevel ="User", Email = "test@gmail.com" },
+                new EmployeeItem { Id = Guid.NewGuid().ToString(), EmployeeID = 2, Name = "Employee One", Department = "Test", PrivledgeLevel ="User", Email = "test@gmail.com" },
             };
 
-            foreach (TodoItem todoItem in todoItems)
+            foreach (EmployeeItem employeeItem in employeeItems)
             {
-                context.Set<TodoItem>().Add(todoItem);
+                context.Set<EmployeeItem>().Add(employeeItem);
             }
 
             base.Seed(context);
