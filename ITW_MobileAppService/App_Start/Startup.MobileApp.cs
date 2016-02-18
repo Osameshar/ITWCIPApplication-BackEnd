@@ -26,10 +26,10 @@ namespace ITW_MobileAppService
                 .ApplyTo(config);
 
             // Use Entity Framework Code First to create database tables based on your DbContext
-            //Database.SetInitializer(new ITW_MobileAppInitializer());
+            Database.SetInitializer(new ITW_MobileAppInitializer());
 
             // To prevent Entity Framework from modifying your database schema, use a null database initializer
-            Database.SetInitializer<ITW_MobileAppContext>(null);
+            //Database.SetInitializer<ITW_MobileAppContext>(null);
 
             MobileAppSettingsDictionary settings = config.GetMobileAppSettingsProvider().GetMobileAppSettings();
 
@@ -49,24 +49,41 @@ namespace ITW_MobileAppService
         }
     }
 
-  /*  public class ITW_MobileAppInitializer : CreateDatabaseIfNotExists<ITW_MobileAppContext>
+    public class ITW_MobileAppInitializer : CreateDatabaseIfNotExists<ITW_MobileAppContext>
     {
         protected override void Seed(ITW_MobileAppContext context)
         {
-            List<EmployeeItem> employeeItems = new List<EmployeeItem>
-            
+
+            List<EventItem> eventItems = new List<EventItem>
             {
-                new EmployeeItem { Id = Guid.NewGuid().ToString(), EmployeeID = 2, Name = "Employee One", Department = "Test", PrivledgeLevel ="User", Email = "test@gmail.com" },
-                new EmployeeItem { Id = Guid.NewGuid().ToString(), EmployeeID = 2, Name = "Employee One", Department = "Test", PrivledgeLevel ="User", Email = "test@gmail.com" },
+                new EventItem { Id = Guid.NewGuid().ToString(), EventRecipients = "Employee One, Employee Two", EventDate = DateTime.Now, EventTime = "9:00 pm", Location = "Bruner", Category = "Meeting", EventPriority = "High", EventDescription = "description", EventID = 1, EmployeeID = 2 },
+            };
+            List<EmployeeItem> employeeItems = new List<EmployeeItem>
+            {
+                new EmployeeItem { Id = Guid.NewGuid().ToString(), Name = "Employee One", Email = "test@gmail.com", EmployeeID = 2, Department = "Test", PrivledgeLevel ="User"},
+                new EmployeeItem { Id = Guid.NewGuid().ToString(), Name = "Employee Two", Email = "test2@gmail.com",  EmployeeID = 3, Department = "Test2", PrivledgeLevel ="User"},
+            };
+            List<RecipientListItem> recipientListItems = new List<RecipientListItem>
+            {
+                new RecipientListItem { Id = Guid.NewGuid().ToString(), EmployeeID = 2, EventID = 1 },
+                new RecipientListItem { Id = Guid.NewGuid().ToString(), EmployeeID = 3, EventID = 1 },
             };
 
+            foreach (EventItem eventItem in eventItems)
+            {
+                context.Set<EventItem>().Add(eventItem);
+            }
             foreach (EmployeeItem employeeItem in employeeItems)
             {
                 context.Set<EmployeeItem>().Add(employeeItem);
             }
+            foreach (RecipientListItem recipientListItem in recipientListItems)
+            {
+                context.Set<RecipientListItem>().Add(recipientListItem);
+            }
 
             base.Seed(context);
         }
-    }*/
+    }
 }
 

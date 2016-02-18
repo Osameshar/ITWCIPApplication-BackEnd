@@ -11,21 +11,19 @@ namespace ITW_MobileAppService.DataObjects
 
         public DateTime EventDate { get; set; }
 
-        public DateTime EventTime { get; set; }
+        public string EventTime { get; set; }
 
         public string Location { get; set; }
 
         public string Category { get; set; }
 
-        public int EventPriority { get; set; }
+        public string EventPriority { get; set; }
 
         public string EventDescription { get; set; }
 
         public int EventID { get; set; }
 
         public int EmployeeID { get; set; }
-
-        public bool deleted { get; set; }
     }
     public class EmployeeItem : EntityData
     {
