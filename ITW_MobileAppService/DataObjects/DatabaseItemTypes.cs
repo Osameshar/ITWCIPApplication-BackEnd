@@ -21,7 +21,7 @@ namespace ITW_MobileAppService.DataObjects
 
         public string EventDescription { get; set; }
 
-        public int EventID { get; set; }
+        //public int EventID { get; set; }
 
         public int EmployeeID { get; set; }
     }
