@@ -56,7 +56,7 @@ namespace ITW_MobileAppService
 
             List<EventItem> eventItems = new List<EventItem>
             {
-                new EventItem { Id = Guid.NewGuid().ToString(), EventRecipients = "Employee One, Employee Two", EventDate = DateTime.Now, EventTime = "9:00 pm", Location = "Bruner", Category = "Meeting", EventPriority = "High", EventDescription = "description", EmployeeID = 2 },
+                new EventItem { Id = Guid.NewGuid().ToString(), EventRecipients = "Employee One, Employee Two", EventDate = DateTime.Now, EventTime = "9:00 pm", Location = "Bruner", Category = "Meeting", EventPriority = "High", EventDescription = "description",EventID = 1, EmployeeID = 2 },
             };
             List<EmployeeItem> employeeItems = new List<EmployeeItem>
             {
