@@ -28,11 +28,12 @@ namespace ITW_MobileAppService.Models
         public DbSet<RecipientListItem> RecipientListItems { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {            
+        {
+            
             modelBuilder.Conventions.Add(
                 new AttributeToColumnAnnotationConvention<TableColumnAttribute, string>(
                     "ServiceTableColumn", (property, attributes) => attributes.Single().ColumnType.ToString()));
-            modelBuilder.Entity<EventItem>().Property(p => p.Deleted).HasColumnName("deleted");
+
         }
     }
 

@@ -24,6 +24,8 @@ namespace ITW_MobileAppService.DataObjects
         public int EventID { get; set; }
 
         public int EmployeeID { get; set; }
+        
+        public new bool Deleted { get; set; }
     }
     public class EmployeeItem : EntityData
     {
