@@ -49,7 +49,7 @@ namespace ITW_MobileAppService
         }
     }
 
-    public class ITW_MobileAppInitializer : DropCreateDatabaseAlways<ITW_MobileAppContext>
+    public class ITW_MobileAppInitializer : CreateDatabaseIfNotExists<ITW_MobileAppContext>
     {
         protected override void Seed(ITW_MobileAppContext context)
         {
