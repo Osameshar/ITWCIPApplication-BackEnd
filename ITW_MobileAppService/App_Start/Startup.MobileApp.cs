@@ -49,14 +49,14 @@ namespace ITW_MobileAppService
         }
     }
 
-    public class ITW_MobileAppInitializer : CreateDatabaseIfNotExists<ITW_MobileAppContext>
+    public class ITW_MobileAppInitializer : DropCreateDatabaseAlways<ITW_MobileAppContext>
     {
         protected override void Seed(ITW_MobileAppContext context)
         {
 
             List<EventItem> eventItems = new List<EventItem>
             {
-                new EventItem { Id = Guid.NewGuid().ToString(), EventRecipients = "Employee One, Employee Two", EventDate = DateTime.Now, EventTime = "9:00 pm", Location = "Bruner", Category = "Meeting", EventPriority = "High", EventDescription = "description",EventID = 1, EmployeeID = 2 },
+                new EventItem { Id = Guid.NewGuid().ToString(), EventRecipients = "Employee One, Employee Two", EventDate = DateTime.Now, EventTime = "9:00 pm", Location = "Bruner", Category = "Meeting", EventPriority = "High", EventDescription = "description",EventID = 1, EmployeeID = 2, IsDeleted = false},
             };
             List<EmployeeItem> employeeItems = new List<EmployeeItem>
             {
