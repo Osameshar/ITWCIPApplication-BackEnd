@@ -9,6 +9,7 @@ using ITW_MobileAppService.Models;
 
 namespace ITW_MobileAppService.Controllers
 {
+    [Authorize]
     public class EmployeeItemController : TableController<EmployeeItem>
     {
         protected override void Initialize(HttpControllerContext controllerContext)

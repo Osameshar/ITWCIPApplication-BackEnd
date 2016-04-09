@@ -9,6 +9,7 @@ using ITW_MobileAppService.Models;
 
 namespace ITW_MobileAppService.Controllers
 {
+    [Authorize]
     public class EventItemController : TableController<EventItem>
     {
         protected override void Initialize(HttpControllerContext controllerContext)
