@@ -26,6 +26,7 @@ namespace ITW_MobileAppService.Models
         public DbSet<EmployeeItem> EmployeeItems { get; set; }
         public DbSet<EventItem> EventItems { get; set; }
         public DbSet<RecipientListItem> RecipientListItems { get; set; }
+        public DbSet<EmployeeLoginItem> EmployeeLoginItems { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

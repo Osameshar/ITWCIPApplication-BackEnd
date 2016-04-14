@@ -45,4 +45,9 @@ namespace ITW_MobileAppService.DataObjects
 
         public int EventID { get; set; }
     }
+    public class EmployeeLoginItem : EntityData
+    {
+        public int EmployeeID { get; set; }
+        public string password { get; set; }
+    }
 }
