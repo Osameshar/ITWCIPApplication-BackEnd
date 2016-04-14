@@ -48,6 +48,6 @@ namespace ITW_MobileAppService.DataObjects
     public class EmployeeLoginItem : EntityData
     {
         public int EmployeeID { get; set; }
-        public string password { get; set; }
+        public string Password { get; set; }
     }
 }

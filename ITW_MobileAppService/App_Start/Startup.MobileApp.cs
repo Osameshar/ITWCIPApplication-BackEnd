@@ -68,6 +68,11 @@ namespace ITW_MobileAppService
                 new RecipientListItem { Id = Guid.NewGuid().ToString(), EmployeeID = 2, EventID = 1 },
                 new RecipientListItem { Id = Guid.NewGuid().ToString(), EmployeeID = 3, EventID = 1 },
             };
+            List<EmployeeLoginItem> employeeLoginItems = new List<EmployeeLoginItem>
+            {
+                new EmployeeLoginItem { Id = Guid.NewGuid().ToString(), EmployeeID = 2, Password = "1234" },
+                new EmployeeLoginItem { Id = Guid.NewGuid().ToString(), EmployeeID = 3, Password = "1234" },
+            };
 
             foreach (EventItem eventItem in eventItems)
             {
@@ -80,6 +85,10 @@ namespace ITW_MobileAppService
             foreach (RecipientListItem recipientListItem in recipientListItems)
             {
                 context.Set<RecipientListItem>().Add(recipientListItem);
+            }
+            foreach (EmployeeLoginItem employeeLoginItem in employeeLoginItems)
+            {
+                context.Set<EmployeeLoginItem>().Add(employeeLoginItem);
             }
 
             base.Seed(context);
