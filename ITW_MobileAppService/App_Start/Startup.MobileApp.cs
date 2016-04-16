@@ -49,7 +49,7 @@ namespace ITW_MobileAppService
         }
     }
 
-    public class ITW_MobileAppInitializer : CreateDatabaseIfNotExists<ITW_MobileAppContext>
+    public class ITW_MobileAppInitializer : DropCreateDatabaseIfModelChanges<ITW_MobileAppContext>
     {
         protected override void Seed(ITW_MobileAppContext context)
         {
@@ -70,8 +70,8 @@ namespace ITW_MobileAppService
             };
             List<EmployeeLoginItem> employeeLoginItems = new List<EmployeeLoginItem>
             {
-                new EmployeeLoginItem { Id = Guid.NewGuid().ToString(), EmployeeID = 2, Password = "1234" },
-                new EmployeeLoginItem { Id = Guid.NewGuid().ToString(), EmployeeID = 3, Password = "1234" },
+                new EmployeeLoginItem { Id = Guid.NewGuid().ToString(), EmployeeID = 2, Hash = "1234", Salt = "abcd"},
+                new EmployeeLoginItem { Id = Guid.NewGuid().ToString(), EmployeeID = 3, Hash = "1234"  Salt = "abcd"},
             };
 
             foreach (EventItem eventItem in eventItems)
