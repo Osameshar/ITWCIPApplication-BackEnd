@@ -71,7 +71,7 @@ namespace ITW_MobileAppService
             List<EmployeeLoginItem> employeeLoginItems = new List<EmployeeLoginItem>
             {
                 new EmployeeLoginItem { Id = Guid.NewGuid().ToString(), EmployeeID = 2, Hash = "1234", Salt = "abcd"},
-                new EmployeeLoginItem { Id = Guid.NewGuid().ToString(), EmployeeID = 3, Hash = "1234"  Salt = "abcd"},
+                new EmployeeLoginItem { Id = Guid.NewGuid().ToString(), EmployeeID = 3, Hash = "1234",  Salt = "abcd"},
             };
 
             foreach (EventItem eventItem in eventItems)
