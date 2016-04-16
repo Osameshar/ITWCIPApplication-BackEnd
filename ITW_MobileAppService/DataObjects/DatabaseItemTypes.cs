@@ -51,8 +51,4 @@ namespace ITW_MobileAppService.DataObjects
         public string Hash { get; set; }
         public string Salt { get; set; }
     }
-    public class Test : EntityData
-    {
-        public int Counter { get; set; }
-    }
 }
